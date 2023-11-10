@@ -7,85 +7,85 @@
  * author: Gramentheme
  * author-url: https://themeforest.net/user/gramentheme
 
-    ==================================================
+	==================================================
 
-     01. video modal
-     -------------------------------------------------
-     02. portfolio text slider
-     -------------------------------------------------
-     03. vanilla tilt
-     -------------------------------------------------
-     04. testimonial text slider
-     -------------------------------------------------
-     05. sponsor slider
-     -------------------------------------------------
-     06. next page text slider
-     -------------------------------------------------
-     07. offer two slider
-     -------------------------------------------------
-     08. portfolio filter
-     -------------------------------------------------
-     09. testimonial two slider
-     -------------------------------------------------
-     10. blog two slider
-     -------------------------------------------------
-     11. banner three slider
-     -------------------------------------------------
-     12. portfolio three slider
-     -------------------------------------------------
-     13. testimonial slider
-     -------------------------------------------------
-     14. project slider
-     -------------------------------------------------
-     15. team slider
-     -------------------------------------------------
-     16. achievements slider
-     -------------------------------------------------
-     17. service plan slider
-     -------------------------------------------------
-     18. project details poster slider
-     -------------------------------------------------
-     19. project details slider
-     -------------------------------------------------
-     20. select subject
-     -------------------------------------------------
-     21. gsap register
-     -------------------------------------------------
-     22. gsap config
-     -------------------------------------------------
-     23. target id
-     -------------------------------------------------
-     24. smooth scroll
-     -------------------------------------------------
-     25. skill bar progress
-     -------------------------------------------------
-     26. project horizontal move
-     -------------------------------------------------
-     27. split title
-     -------------------------------------------------
-     28. fade animations
-     -------------------------------------------------
-     29. banner one thumb
-     -------------------------------------------------
-     30. banner two thumb
-     -------------------------------------------------
-     31. banner five horizontal move
-     -------------------------------------------------
-     32. video modal bg
-     -------------------------------------------------
-     33. testimonial two thumb
-     -------------------------------------------------
-     34. banner five
-     -------------------------------------------------
-     35. folks text
-     
-    ==================================================
+	 01. video modal
+	 -------------------------------------------------
+	 02. portfolio text slider
+	 -------------------------------------------------
+	 03. vanilla tilt
+	 -------------------------------------------------
+	 04. testimonial text slider
+	 -------------------------------------------------
+	 05. sponsor slider
+	 -------------------------------------------------
+	 06. next page text slider
+	 -------------------------------------------------
+	 07. offer two slider
+	 -------------------------------------------------
+	 08. portfolio filter
+	 -------------------------------------------------
+	 09. testimonial two slider
+	 -------------------------------------------------
+	 10. blog two slider
+	 -------------------------------------------------
+	 11. banner three slider
+	 -------------------------------------------------
+	 12. portfolio three slider
+	 -------------------------------------------------
+	 13. testimonial slider
+	 -------------------------------------------------
+	 14. project slider
+	 -------------------------------------------------
+	 15. team slider
+	 -------------------------------------------------
+	 16. achievements slider
+	 -------------------------------------------------
+	 17. service plan slider
+	 -------------------------------------------------
+	 18. project details poster slider
+	 -------------------------------------------------
+	 19. project details slider
+	 -------------------------------------------------
+	 20. select subject
+	 -------------------------------------------------
+	 21. gsap register
+	 -------------------------------------------------
+	 22. gsap config
+	 -------------------------------------------------
+	 23. target id
+	 -------------------------------------------------
+	 24. smooth scroll
+	 -------------------------------------------------
+	 25. skill bar progress
+	 -------------------------------------------------
+	 26. project horizontal move
+	 -------------------------------------------------
+	 27. split title
+	 -------------------------------------------------
+	 28. fade animations
+	 -------------------------------------------------
+	 29. banner one thumb
+	 -------------------------------------------------
+	 30. banner two thumb
+	 -------------------------------------------------
+	 31. banner five horizontal move
+	 -------------------------------------------------
+	 32. video modal bg
+	 -------------------------------------------------
+	 33. testimonial two thumb
+	 -------------------------------------------------
+	 34. banner five
+	 -------------------------------------------------
+	 35. folks text
+	 
+	==================================================
 ============== */
 
-(function($) {
+(function ($) {
 	"use strict";
 
-	jQuery(document).ready(function() {
+	jQuery(document).ready(function () {
 		let device_width = window.innerWidth;
 
 		// 01. video modal
@@ -154,29 +154,29 @@
 				centerMode: true,
 				centerPadding: "0px",
 				responsive: [{
-						breakpoint: 1700,
-						settings: {
-							slidesToShow: 5,
-						},
+					breakpoint: 1700,
+					settings: {
+						slidesToShow: 5,
 					},
-					{
-						breakpoint: 1400,
-						settings: {
-							slidesToShow: 4,
-						},
+				},
+				{
+					breakpoint: 1400,
+					settings: {
+						slidesToShow: 4,
 					},
-					{
-						breakpoint: 1200,
-						settings: {
-							slidesToShow: 3,
-						},
+				},
+				{
+					breakpoint: 1200,
+					settings: {
+						slidesToShow: 3,
 					},
-					{
-						breakpoint: 576,
-						settings: {
-							slidesToShow: 2,
-						},
+				},
+				{
+					breakpoint: 576,
+					settings: {
+						slidesToShow: 2,
 					},
+				},
 				],
 			});
 
@@ -233,11 +233,11 @@
 				});
 
 				var filterFns = {
-					all: function() {
+					all: function () {
 						return true;
 					},
 				};
-				$(".portfolio-two__filter-btn").on("click", "button", function() {
+				$(".portfolio-two__filter-btn").on("click", "button", function () {
 					var filterValue = $(this).attr("data-filter");
 					filterValue = filterFns[filterValue] || filterValue;
 					$grid.isotope({
@@ -245,9 +245,9 @@
 					});
 				});
 
-				$(".portfolio-two__filter-btn").each(function(i, buttonGroup) {
+				$(".portfolio-two__filter-btn").each(function (i, buttonGroup) {
 					var $buttonGroup = $(buttonGroup);
-					$buttonGroup.on("click", "button", function() {
+					$buttonGroup.on("click", "button", function () {
 						$buttonGroup.find(".active").removeClass("active");
 						$(this).addClass("active");
 					});
@@ -294,17 +294,17 @@
 				centerMode: true,
 				centerPadding: "0px",
 				responsive: [{
-						breakpoint: 1200,
-						settings: {
-							slidesToShow: 2,
-						},
+					breakpoint: 1200,
+					settings: {
+						slidesToShow: 2,
 					},
-					{
-						breakpoint: 768,
-						settings: {
-							slidesToShow: 1,
-						},
+				},
+				{
+					breakpoint: 768,
+					settings: {
+						slidesToShow: 1,
 					},
+				},
 				],
 			});
 
@@ -320,7 +320,7 @@
 				slidesToShow: 1,
 				slidesToScroll: 1,
 			})
-			.on("beforeChange", function(nextSlide) {
+			.on("beforeChange", function (nextSlide) {
 				updateSliderProgress(nextSlide);
 			});
 
@@ -329,7 +329,7 @@
 		var time = 0.1;
 		var progressBarIndex = 0;
 
-		$(".slider-progress").each(function(index) {
+		$(".slider-progress").each(function (index) {
 			var progress = "<div class='inProgress inProgress" + index + "'></div>";
 			$(this).html(progress);
 		});
@@ -384,7 +384,7 @@
 
 		$(".single-item:first-child").addClass("single-item-active");
 
-		$(".single-item").on("click", function() {
+		$(".single-item").on("click", function () {
 			clearInterval(tick);
 			$(".single-item").removeClass("single-item-active");
 			$(this).addClass("single-item-active");
@@ -412,17 +412,17 @@
 				centerPadding: "25%",
 				draggable: false,
 				responsive: [{
-						breakpoint: 1200,
-						settings: {
-							centerPadding: "10%",
-						},
+					breakpoint: 1200,
+					settings: {
+						centerPadding: "10%",
 					},
-					{
-						breakpoint: 576,
-						settings: {
-							centerPadding: "0%",
-						},
+				},
+				{
+					breakpoint: 576,
+					settings: {
+						centerPadding: "0%",
 					},
+				},
 				],
 			});
 
@@ -447,7 +447,7 @@
 
 		$(".testimonial-s__slider").on(
 			"beforeChange",
-			function(event, slick, currentSlide, nextSlide) {
+			function (event, slick, currentSlide, nextSlide) {
 				var nextSlideIndex = (nextSlide + 1) % slick.slideCount;
 				var nextImageSrc = slick.$slides
 					.eq(nextSlideIndex)
@@ -475,7 +475,7 @@
 		// 15. team slider
 		$(".team-s__slider")
 			.not(".slick-initialized")
-			.on("init", function(event, slick) {
+			.on("init", function (event, slick) {
 				$(slick.$slides.get(slick.currentSlide)).addClass(
 					"slick-center-active"
 				);
@@ -498,24 +498,24 @@
 				variableWidth: true,
 
 				responsive: [{
-						breakpoint: 768,
-						settings: {
-							slidesToShow: 2,
-							variableWidth: false,
-							centerPadding: "5%",
-						},
+					breakpoint: 768,
+					settings: {
+						slidesToShow: 2,
+						variableWidth: false,
+						centerPadding: "5%",
 					},
-					{
-						breakpoint: 576,
-						settings: {
-							slidesToShow: 1,
-							variableWidth: false,
-							centerPadding: "5%",
-						},
+				},
+				{
+					breakpoint: 576,
+					settings: {
+						slidesToShow: 1,
+						variableWidth: false,
+						centerPadding: "5%",
 					},
+				},
 				],
 			})
-			.on("afterChange", function(event, slick, currentSlide) {
+			.on("afterChange", function (event, slick, currentSlide) {
 				$(".slick-slide").removeClass("slick-center-active");
 				$(slick.$slides.get(slick.currentSlide)).addClass(
 					"slick-center-active"
@@ -536,29 +536,29 @@
 				arrows: false,
 				dots: false,
 				responsive: [{
-						breakpoint: 1200,
-						settings: {
-							slidesToShow: 4,
-						},
+					breakpoint: 1200,
+					settings: {
+						slidesToShow: 4,
 					},
-					{
-						breakpoint: 768,
-						settings: {
-							slidesToShow: 3,
-						},
+				},
+				{
+					breakpoint: 768,
+					settings: {
+						slidesToShow: 3,
 					},
-					{
-						breakpoint: 576,
-						settings: {
-							slidesToShow: 2,
-						},
+				},
+				{
+					breakpoint: 576,
+					settings: {
+						slidesToShow: 2,
 					},
-					{
-						breakpoint: 375,
-						settings: {
-							slidesToShow: 1,
-						},
+				},
+				{
+					breakpoint: 375,
+					settings: {
+						slidesToShow: 1,
 					},
+				},
 				],
 			});
 
@@ -580,23 +580,23 @@
 				centerMode: true,
 				centerPadding: "0px",
 				responsive: [{
-						breakpoint: 1400,
-						settings: {
-							slidesToShow: 3,
-						},
+					breakpoint: 1400,
+					settings: {
+						slidesToShow: 3,
 					},
-					{
-						breakpoint: 1200,
-						settings: {
-							slidesToShow: 2,
-						},
+				},
+				{
+					breakpoint: 1200,
+					settings: {
+						slidesToShow: 2,
 					},
-					{
-						breakpoint: 768,
-						settings: {
-							slidesToShow: 1,
-						},
+				},
+				{
+					breakpoint: 768,
+					settings: {
+						slidesToShow: 1,
 					},
+				},
 				],
 			});
 
@@ -635,17 +635,17 @@
 				centerMode: true,
 				centerPadding: "15%",
 				responsive: [{
-						breakpoint: 1400,
-						settings: {
-							slidesToShow: 2,
-						},
+					breakpoint: 1400,
+					settings: {
+						slidesToShow: 2,
 					},
-					{
-						breakpoint: 768,
-						settings: {
-							slidesToShow: 1,
-						},
+				},
+				{
+					breakpoint: 768,
+					settings: {
+						slidesToShow: 1,
 					},
+				},
 				],
 			});
 
@@ -666,7 +666,7 @@
 		});
 
 		// 23. target id
-		$('a[href^="#"]').on("click", function(event) {
+		$('a[href^="#"]').on("click", function (event) {
 			event.preventDefault();
 
 			var target = $(this).attr("href");
@@ -684,16 +684,16 @@
 		// 24. smooth scroll
 		if (device_width > 576) {
 			const smoother = ScrollSmoother.create({
-			  smooth: 2.2,
-			  effects: device_width < 992 ? false : true,
-			  smoothTouch: false,
-			  normalizeScroll: false,
-			  ignoreMobileResize: true,
+				smooth: 2.2,
+				effects: device_width < 992 ? false : true,
+				smoothTouch: false,
+				normalizeScroll: false,
+				ignoreMobileResize: true,
 			});
-		  }
+		}
 
 		// 25. skill bar progress
-		$("[data-percent]").each(function() {
+		$("[data-percent]").each(function () {
 			$(this)
 				.find(".skill-bar-percent")
 				.css("width", $(this).attr("data-percent"));
@@ -718,18 +718,18 @@
 
 			ax_bartl.fromTo(
 				w, {
-					width: 0
-				}, {
-					width: target,
-				}
+				width: 0
+			}, {
+				width: target,
+			}
 			);
 			ax_bartl.from(
 				p, {
-					textContent: 0 + "%",
-					snap: {
-						textContent: 5
-					},
+				textContent: 0 + "%",
+				snap: {
+					textContent: 5
 				},
+			},
 				"<"
 			);
 		});
@@ -783,7 +783,7 @@
 		// 28. fade animations
 		if ($(".fade-left").length > 0) {
 			if (device_width > 576) {
-				$(".fade-left").each(function() {
+				$(".fade-left").each(function () {
 					var element = this;
 
 					gsap.set(element, {
@@ -796,7 +796,7 @@
 						trigger: element,
 						start: "top 100%",
 						end: "bottom 20%",
-						onEnter: function() {
+						onEnter: function () {
 							gsap.to(element, {
 								opacity: 1,
 								x: 0,
@@ -813,7 +813,7 @@
 
 		if ($(".fade-right").length > 0) {
 			if (device_width > 576) {
-				$(".fade-right").each(function() {
+				$(".fade-right").each(function () {
 					var element = this;
 
 					gsap.set(element, {
@@ -826,7 +826,7 @@
 						trigger: element,
 						start: "top 100%",
 						end: "bottom 20%",
-						onEnter: function() {
+						onEnter: function () {
 							gsap.to(element, {
 								opacity: 1,
 								x: 0,
@@ -843,11 +843,11 @@
 
 		if ($(".fade-wrapper").length > 0) {
 			if (device_width > 576) {
-				$(".fade-wrapper").each(function() {
+				$(".fade-wrapper").each(function () {
 					var section = $(this);
 					var fadeItems = section.find(".fade-top");
 
-					fadeItems.each(function(index, element) {
+					fadeItems.each(function (index, element) {
 						var delay = index * 0;
 
 						gsap.set(element, {
@@ -860,7 +860,7 @@
 							trigger: element,
 							start: "top 100%",
 							end: "bottom 20%",
-							onEnter: function() {
+							onEnter: function () {
 								gsap.to(element, {
 									opacity: 1,
 									y: 0,
@@ -878,11 +878,11 @@
 
 		if ($(".fade-wrapper").length > 0) {
 			if (device_width > 576) {
-				$(".fade-wrapper").each(function() {
+				$(".fade-wrapper").each(function () {
 					var section = $(this);
 					var fadeItems = section.find(".fade-down");
 
-					fadeItems.each(function(index, element) {
+					fadeItems.each(function (index, element) {
 						var delay = index * 0;
 
 						gsap.set(element, {
@@ -895,7 +895,7 @@
 							trigger: element,
 							start: "top 100%",
 							end: "bottom 20%",
-							onEnter: function() {
+							onEnter: function () {
 								gsap.to(element, {
 									opacity: 1,
 									y: 0,
@@ -992,6 +992,46 @@
 					},
 				});
 				tl.to(".modal-bg", {
+					opacity: 0,
+					scale: 1,
+					y: "50%",
+					duration: 2,
+				});
+			}
+		}
+
+		if ($(".modal-bg2").length > 0) {
+			if (device_width > 576) {
+				var tl = gsap.timeline({
+					scrollTrigger: {
+						trigger: ".modal-bg2",
+						start: "center center",
+						end: "+=100%",
+						scrub: true,
+						pin: false,
+					},
+				});
+				tl.to(".modal-bg2", {
+					opacity: 0,
+					scale: 1,
+					y: "50%",
+					duration: 2,
+				});
+			}
+		}
+
+		if ($(".modal-bg3").length > 0) {
+			if (device_width > 576) {
+				var tl = gsap.timeline({
+					scrollTrigger: {
+						trigger: ".modal-bg3",
+						start: "center center",
+						end: "+=100%",
+						scrub: true,
+						pin: false,
+					},
+				});
+				tl.to(".modal-bg3", {
 					opacity: 0,
 					scale: 1,
 					y: "50%",
